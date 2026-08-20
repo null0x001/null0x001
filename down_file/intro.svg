@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="650"
+     height="185"
+     viewBox="0 -35 650 185">
+
+  <style>
+
+    .text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      fill: #D7D7E0;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      fill: #FFFFFF;
+    }
+
+    .highlight {
+      fill: #A970FF;
+    }
+
+    .prompt {
+      fill: #C084FC;
+      font-weight: bold;
+    }
+
+  </style>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ANIMATION MASKS
+  ═══════════════════════════════════════════════ -->
+
+  <clipPath id="mask1">
+    <rect x="0" y="0" width="0" height="40">
+      <animate
+        attributeName="width"
+        from="0"
+        to="650"
+        dur="1s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <clipPath id="mask2">
+    <rect x="0" y="40" width="0" height="30">
+      <animate
+        attributeName="width"
+        from="0"
+        to="650"
+        dur="1s"
+        begin="1s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <clipPath id="mask3">
+    <rect x="0" y="70" width="0" height="30">
+      <animate
+        attributeName="width"
+        from="0"
+        to="650"
+        dur="1s"
+        begin="2s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <clipPath id="mask4">
+    <rect x="0" y="100" width="0" height="40">
+      <animate
+        attributeName="width"
+        from="0"
+        to="650"
+        dur="1.5s"
+        begin="3s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+
+  <!-- ═══════════════════════════════════════════════
+       INTRO
+  ═══════════════════════════════════════════════ -->
+
+  <g clip-path="url(#mask1)">
+    <text x="0" y="30" class="text title">
+      <tspan class="prompt">></tspan>
+      Hi, I'm
+      <tspan class="highlight"> null0x001</tspan>
+    </text>
+  </g>
+
+
+  <g clip-path="url(#mask2)">
+    <text x="0" y="60" class="text">
+      <tspan class="prompt">$</tspan>
+      Student. Developer. Builder.
+    </text>
+  </g>
+
+
+  <g clip-path="url(#mask3)">
+    <text x="0" y="90" class="text">
+      <tspan class="prompt">$</tspan>
+      Learning Python, Linux, networking &amp; cybersecurity.
+    </text>
+  </g>
+
+
+  <g clip-path="url(#mask4)">
+    <text x="0" y="120" class="text">
+      <tspan class="prompt">$</tspan>
+      Building from fundamentals, one project at a time.
+    </text>
+  </g>
+
+</svg>

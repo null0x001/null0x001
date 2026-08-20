@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="40" viewBox="0 0 800 40">
+
+  <style>
+    .text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      fill: #FCA311;
+      font-weight: bold;
+    }
+
+    .line {
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-dasharray: 4, 6;
+      stroke-dashoffset: 0;
+      animation: march 20s linear infinite;
+    }
+
+    @keyframes march {
+      to {
+        stroke-dashoffset: 400;
+      }
+    }
+
+    .cursor {
+      fill: #ffffff;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <!-- Terminal prompt -->
+  <text
+    x="20"
+    y="24"
+    class="text"
+  >
+    root@null0x001:~#
+  </text>
+
+  <!-- Animated divider -->
+  <line
+    x1="170"
+    y1="20"
+    x2="770"
+    y2="20"
+    class="line"
+  />
+
+  <!-- Blinking terminal cursor -->
+  <rect
+    x="775"
+    y="12"
+    width="8"
+    height="15"
+    class="cursor"
+  />
+
+</svg>

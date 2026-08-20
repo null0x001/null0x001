@@ -1,17 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800"
+     height="200"
+     viewBox="0 0 800 200">
 
   <style>
+
     .text {
       font-family: 'Courier New', Courier, monospace;
       font-size: 14.5px;
-      fill: #C9D1D9;
+      fill: #D7D7E0;
     }
 
     .prompt {
-      fill: #FCA311;
+      fill: #C084FC;
       font-weight: bold;
     }
+
+    .command {
+      fill: #A970FF;
+      font-weight: bold;
+    }
+
   </style>
+
 
   <!-- ═══════════════════════════════════════════════
        TERMINAL LINE ANIMATIONS
@@ -21,6 +32,7 @@
     <rect width="0" height="25" y="0">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         fill="freeze"
@@ -32,6 +44,7 @@
     <rect width="0" height="25" y="25">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="1s"
@@ -44,6 +57,7 @@
     <rect width="0" height="25" y="50">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="2s"
@@ -56,6 +70,7 @@
     <rect width="0" height="25" y="75">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="3s"
@@ -68,6 +83,7 @@
     <rect width="0" height="25" y="100">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="4s"
@@ -80,6 +96,7 @@
     <rect width="0" height="25" y="125">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="5s"
@@ -92,6 +109,7 @@
     <rect width="0" height="25" y="150">
       <animate
         attributeName="width"
+        from="0"
         to="800"
         dur="1s"
         begin="6s"
@@ -108,9 +126,10 @@
   <g clip-path="url(#m1)">
     <text x="0" y="18" class="text">
       <tspan class="prompt">root@null0x001:~/about#</tspan>
-      cat bio.txt
+      <tspan class="command"> cat bio.txt</tspan>
     </text>
   </g>
+
 
   <g clip-path="url(#m2)">
     <text x="0" y="43" class="text">
@@ -118,11 +137,13 @@
     </text>
   </g>
 
+
   <g clip-path="url(#m3)">
     <text x="0" y="68" class="text">
       Currently focused on Python fundamentals, cybersecurity, Linux, and networking.
     </text>
   </g>
+
 
   <g clip-path="url(#m4)">
     <text x="0" y="93" class="text">
@@ -130,11 +151,13 @@
     </text>
   </g>
 
+
   <g clip-path="url(#m5)">
     <text x="0" y="118" class="text">
       From toy network tools and automation scripts to systems and hardware experiments.
     </text>
   </g>
+
 
   <g clip-path="url(#m6)">
     <text x="0" y="143" class="text">
@@ -142,10 +165,11 @@
     </text>
   </g>
 
+
   <g clip-path="url(#m7)">
     <text x="0" y="168" class="text">
       <tspan class="prompt">root@null0x001:~/about#</tspan>
-      ./keep_building.sh
+      <tspan class="command"> ./keep_building.sh</tspan>
     </text>
   </g>
 

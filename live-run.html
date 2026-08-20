@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>null0x001 — README Preview</title>
+
+    <!-- GitHub Markdown -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown-dark.min.css"
+    >
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- XSS Protection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+
+    <style>
+        :root {
+            --bg: #05070a;
+            --panel: #0a0d12;
+            --panel-2: #0d1117;
+
+            --border: #1c232d;
+            --border-bright: #303946;
+
+            --text: #e6edf3;
+            --muted: #7d8590;
+
+            --accent: #fca311;
+            --accent-soft: rgba(252, 163, 17, 0.12);
+
+            --green: #3fb950;
+            --red: #ff7b72;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+        }
+
+        /* ─────────────────────────────────────────────
+           HEADER
+        ───────────────────────────────────────────── */
+
+        header {
+            height: 58px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0b0f14 0%,
+                    #080b0f 100%
+                );
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            flex-shrink: 0;
+
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.02);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .terminal-icon {
+            width: 30px;
+            height: 30px;
+
+            border: 1px solid var(--border-bright);
+            border-radius: 7px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--accent);
+
+            background: #080b0f;
+
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+
+            box-shadow:
+                inset 0 0 15px rgba(252,163,17,0.03);
+        }
+
+        .brand-name {
+            font-family: "Courier New", monospace;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            color: var(--text);
+        }
+
+        .brand-name span {
+            color: var(--accent);
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+
+            color: var(--muted);
+        }
+
+        .file-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 8px rgba(63,185,80,0.45);
+        }
+
+        /* ─────────────────────────────────────────────
+           MAIN
+        ───────────────────────────────────────────── */
+
+        .preview-pane {
+            flex: 1;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% -20%,
+                    rgba(252,163,17,0.035),
+                    transparent 40%
+                ),
+                var(--bg);
+        }
+
+        /* GitHub-like centered container */
+
+        #preview-output {
+            width: min(980px, calc(100% - 40px));
+
+            margin: 35px auto 70px;
+
+            padding: 42px 48px;
+
+            background: #0d1117;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+            min-height: calc(100vh - 165px);
+        }
+
+        /* ─────────────────────────────────────────────
+           GITHUB MARKDOWN OVERRIDES
+        ───────────────────────────────────────────── */
+
+        .markdown-body {
+            color-scheme: dark;
+
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .markdown-body a {
+            color: var(--accent);
+        }
+
+        .markdown-body a:hover {
+            color: #ffc45c;
+        }
+
+        .markdown-body hr {
+            border-color: var(--border);
+        }
+
+        .markdown-body blockquote {
+            border-left-color: var(--accent);
+        }
+
+        .markdown-body code {
+            background: #161b22;
+            border: 1px solid #21262d;
+        }
+
+        .markdown-body pre {
+            background: #080b0f;
+            border: 1px solid var(--border);
+        }
+
+        .markdown-body table tr {
+            background: #0d1117;
+            border-color: var(--border);
+        }
+
+        .markdown-body table tr:nth-child(2n) {
+            background: #0a0e13;
+        }
+
+        .markdown-body table th,
+        .markdown-body table td {
+            border-color: var(--border);
+        }
+
+        /* ─────────────────────────────────────────────
+           STATUS BAR
+        ───────────────────────────────────────────── */
+
+        .status-bar {
+            position: fixed;
+
+            bottom: 16px;
+            right: 20px;
+
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 12px;
+
+            background: rgba(10,13,18,0.92);
+
+            border: 1px solid var(--border-bright);
+
+            border-radius: 7px;
+
+            backdrop-filter: blur(12px);
+
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+
+            color: var(--muted);
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.35);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 7px rgba(63,185,80,0.5);
+        }
+
+        .status-dot.error {
+            background: var(--red);
+
+            box-shadow:
+                0 0 7px rgba(255,123,114,0.5);
+        }
+
+        #last-sync {
+            color: #a5adb8;
+        }
+
+        /* ─────────────────────────────────────────────
+           LOADING / ERROR
+        ───────────────────────────────────────────── */
+
+        .system-message {
+            max-width: 600px;
+
+            margin: 100px auto;
+
+            padding: 28px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            background: #080b0f;
+
+            font-family: "Courier New", monospace;
+        }
+
+        .system-message h3 {
+            margin-top: 0;
+
+            color: var(--accent);
+
+            font-size: 15px;
+        }
+
+        .system-message p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .system-message code {
+            color: var(--text);
+
+            background: #11161d;
+
+            padding: 3px 6px;
+
+            border-radius: 4px;
+        }
+
+        /* ─────────────────────────────────────────────
+           SCROLLBAR
+        ───────────────────────────────────────────── */
+
+        ::-webkit-scrollbar {
+            width: 9px;
+            height: 9px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #252c35;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3a434f;
+        }
+
+        /* ─────────────────────────────────────────────
+           MOBILE
+        ───────────────────────────────────────────── */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 0 14px;
+            }
+
+            .file-info {
+                display: none;
+            }
+
+            #preview-output {
+                width: calc(100% - 20px);
+
+                margin: 10px auto 50px;
+
+                padding: 24px 20px;
+
+                border-radius: 7px;
+            }
+
+            .status-bar {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════════════ -->
+
+    <header>
+
+        <div class="brand">
+
+            <div class="terminal-icon">
+                &gt;_
+            </div>
+
+            <div class="brand-name">
+                null<span>0x001</span>
+            </div>
+
+        </div>
+
+        <div class="file-info">
+
+            <div class="file-dot"></div>
+
+            <span>README.md</span>
+
+            <span>•</span>
+
+            <span>LIVE PREVIEW</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════════
+         README PREVIEW
+    ═══════════════════════════════════════════════ -->
+
+    <main class="preview-pane">
+
+        <div
+            id="preview-output"
+            class="markdown-body"
+        >
+            <div class="system-message">
+
+                <h3>initializing README renderer...</h3>
+
+                <p>
+                    Waiting for <code>README.md</code>
+                </p>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════
+         LIVE STATUS
+    ═══════════════════════════════════════════════ -->
+
+    <div class="status-bar">
+
+        <div
+            id="status-dot"
+            class="status-dot"
+        ></div>
+
+        <span id="status-text">
+            watching README.md
+        </span>
+
+        <span>•</span>
+
+        <span id="last-sync">
+            waiting...
+        </span>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+         JAVASCRIPT
+    ═══════════════════════════════════════════════ -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const output =
+                document.getElementById("preview-output");
+
+            const statusDot =
+                document.getElementById("status-dot");
+
+            const statusText =
+                document.getElementById("status-text");
+
+            const lastSync =
+                document.getElementById("last-sync");
+
+
+            let lastContent = "";
+
+
+            /* Markdown configuration */
+
+            marked.setOptions({
+                gfm: true,
+                breaks: true
+            });
+
+
+            /* Render Markdown */
+
+            function renderMarkdown(markdownText) {
+
+                const rawHTML =
+                    marked.parse(markdownText);
+
+                const safeHTML =
+                    DOMPurify.sanitize(rawHTML, {
+
+                        ADD_TAGS: ["iframe"],
+
+                        ADD_ATTR: [
+                            "allow",
+                            "allowfullscreen",
+                            "frameborder",
+                            "scrolling",
+                            "align"
+                        ]
+
+                    });
+
+                output.innerHTML = safeHTML;
+            }
+
+
+            /* Update status */
+
+            function setStatus(
+                state,
+                message
+            ) {
+
+                statusDot.classList.remove("error");
+
+                if (state === "error") {
+                    statusDot.classList.add("error");
+                }
+
+                statusText.textContent = message;
+            }
+
+
+            /* Fetch README */
+
+            function updateREADME() {
+
+                fetch(
+                    "README.md?t=" +
+                    Date.now()
+                )
+
+                .then(response => {
+
+                    if (!response.ok) {
+                        throw new Error(
+                            "README.md not found"
+                        );
+                    }
+
+                    return response.text();
+
+                })
+
+                .then(text => {
+
+                    if (text !== lastContent) {
+
+                        lastContent = text;
+
+                        renderMarkdown(text);
+
+                        const now =
+                            new Date();
+
+                        lastSync.textContent =
+                            now.toLocaleTimeString(
+                                [],
+                                {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                    second: "2-digit"
+                                }
+                            );
+                    }
+
+                    setStatus(
+                        "ok",
+                        "watching README.md"
+                    );
+
+                })
+
+                .catch(error => {
+
+                    console.error(
+                        "README error:",
+                        error
+                    );
+
+                    setStatus(
+                        "error",
+                        "README unavailable"
+                    );
+
+                    if (lastContent === "") {
+
+                        output.innerHTML = `
+
+                            <div class="system-message">
+
+                                <h3>
+                                    README.md could not be loaded
+                                </h3>
+
+                                <p>
+                                    Start a local HTTP server
+                                    inside your project directory.
+                                </p>
+
+                                <p>
+                                    <code>
+                                        python3 -m http.server 8000
+                                    </code>
+                                </p>
+
+                                <p>
+                                    Then open:
+                                </p>
+
+                                <p>
+                                    <code>
+                                        http://localhost:8000/live-editor.html
+                                    </code>
+                                </p>
+
+                            </div>
+
+                        `;
+                    }
+
+                });
+
+            }
+
+
+            /* Initial load */
+
+            updateREADME();
+
+
+            /* Live synchronization */
+
+            setInterval(
+                updateREADME,
+                1000
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+

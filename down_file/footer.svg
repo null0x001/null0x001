@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500"
+     height="500"
+     viewBox="0 0 500 500">
+
+  <defs>
+
+    <!-- Subtle glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid -->
+    <pattern
+      id="grid"
+      width="25"
+      height="25"
+      patternUnits="userSpaceOnUse">
+
+      <path
+        d="M 25 0 L 0 0 0 25"
+        fill="none"
+        stroke="#1c232d"
+        stroke-width="1"
+      />
+
+    </pattern>
+
+  </defs>
+
+
+  <!-- Background -->
+  <rect
+    width="500"
+    height="500"
+    rx="40"
+    fill="#05070a"
+  />
+
+  <!-- Grid -->
+  <rect
+    x="25"
+    y="25"
+    width="450"
+    height="450"
+    rx="25"
+    fill="url(#grid)"
+    opacity="0.55"
+  />
+
+
+  <!-- Outer terminal frame -->
+  <rect
+    x="65"
+    y="65"
+    width="370"
+    height="370"
+    rx="22"
+    fill="#080b0f"
+    stroke="#303946"
+    stroke-width="2"
+  />
+
+
+  <!-- Terminal header -->
+  <rect
+    x="65"
+    y="65"
+    width="370"
+    height="42"
+    rx="22"
+    fill="#0d1117"
+  />
+
+  <line
+    x1="65"
+    y1="107"
+    x2="435"
+    y2="107"
+    stroke="#303946"
+    stroke-width="1"
+  />
+
+
+  <!-- Window controls -->
+  <circle cx="88" cy="86" r="5" fill="#ff7b72"/>
+  <circle cx="105" cy="86" r="5" fill="#fca311"/>
+  <circle cx="122" cy="86" r="5" fill="#3fb950"/>
+
+
+  <!-- Terminal prompt -->
+  <text
+    x="95"
+    y="165"
+    fill="#FCA311"
+    font-family="Courier New, monospace"
+    font-size="24"
+    font-weight="bold">
+    $
+  </text>
+
+
+  <text
+    x="125"
+    y="165"
+    fill="#C9D1D9"
+    font-family="Courier New, monospace"
+    font-size="22">
+    whoami
+  </text>
+
+
+  <!-- Output -->
+  <text
+    x="95"
+    y="205"
+    fill="#7d8590"
+    font-family="Courier New, monospace"
+    font-size="17">
+    null0x001
+  </text>
+
+
+  <!-- Second command -->
+  <text
+    x="95"
+    y="260"
+    fill="#FCA311"
+    font-family="Courier New, monospace"
+    font-size="24"
+    font-weight="bold">
+    $
+  </text>
+
+  <text
+    x="125"
+    y="260"
+    fill="#C9D1D9"
+    font-family="Courier New, monospace"
+    font-size="22">
+    build
+  </text>
+
+
+  <!-- Progress -->
+  <rect
+    x="95"
+    y="290"
+    width="290"
+    height="8"
+    rx="4"
+    fill="#1c232d"
+  />
+
+  <rect
+    x="95"
+    y="290"
+    width="218"
+    height="8"
+    rx="4"
+    fill="#FCA311"
+    filter="url(#glow)"
+  />
+
+
+  <!-- Status -->
+  <text
+    x="95"
+    y="335"
+    fill="#3fb950"
+    font-family="Courier New, monospace"
+    font-size="15">
+    [■■■■■■■■■■■■■■■░░░░░]
+  </text>
+
+
+  <text
+    x="95"
+    y="370"
+    fill="#7d8590"
+    font-family="Courier New, monospace"
+    font-size="14">
+    learning...
+  </text>
+
+
+  <!-- Blinking cursor -->
+  <rect
+    x="95"
+    y="390"
+    width="9"
+    height="18"
+    fill="#FCA311">
+
+    <animate
+      attributeName="opacity"
+      values="1;0;1"
+      dur="1s"
+      repeatCount="indefinite"/>
+
+  </rect>
+
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+
+  <style>
+    .text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      fill: #C9D1D9;
+    }
+
+    .prompt {
+      fill: #FCA311;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- ═══════════════════════════════════════════════
+       TERMINAL LINE ANIMATIONS
+  ═══════════════════════════════════════════════ -->
+
+  <clipPath id="m1">
+    <rect width="0" height="25" y="0">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m2">
+    <rect width="0" height="25" y="25">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="1s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m3">
+    <rect width="0" height="25" y="50">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="2s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m4">
+    <rect width="0" height="25" y="75">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="3s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m5">
+    <rect width="0" height="25" y="100">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="4s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m6">
+    <rect width="0" height="25" y="125">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="5s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+  <clipPath id="m7">
+    <rect width="0" height="25" y="150">
+      <animate
+        attributeName="width"
+        to="800"
+        dur="1s"
+        begin="6s"
+        fill="freeze"
+      />
+    </rect>
+  </clipPath>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT CONTENT
+  ═══════════════════════════════════════════════ -->
+
+  <g clip-path="url(#m1)">
+    <text x="0" y="18" class="text">
+      <tspan class="prompt">root@null0x001:~/about#</tspan>
+      cat bio.txt
+    </text>
+  </g>
+
+  <g clip-path="url(#m2)">
+    <text x="0" y="43" class="text">
+      Student and developer from India, learning by building things from scratch.
+    </text>
+  </g>
+
+  <g clip-path="url(#m3)">
+    <text x="0" y="68" class="text">
+      Currently focused on Python fundamentals, cybersecurity, Linux, and networking.
+    </text>
+  </g>
+
+  <g clip-path="url(#m4)">
+    <text x="0" y="93" class="text">
+      I build small projects, break them, understand why they fail, and rebuild them.
+    </text>
+  </g>
+
+  <g clip-path="url(#m5)">
+    <text x="0" y="118" class="text">
+      From toy network tools and automation scripts to systems and hardware experiments.
+    </text>
+  </g>
+
+  <g clip-path="url(#m6)">
+    <text x="0" y="143" class="text">
+      My goal isn't to collect technologies. It's to understand the fundamentals behind them.
+    </text>
+  </g>
+
+  <g clip-path="url(#m7)">
+    <text x="0" y="168" class="text">
+      <tspan class="prompt">root@null0x001:~/about#</tspan>
+      ./keep_building.sh
+    </text>
+  </g>
+
+</svg>

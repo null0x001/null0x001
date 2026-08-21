@@ -26,12 +26,11 @@
     <!-- Violet glow -->
     <filter
       id="violet-glow"
-      x="-30%"
-      y="-30%"
-      width="160%"
-      height="160%"
+      x="-50%"
+      y="-50%"
+      width="200%"
+      height="200%"
     >
-
       <feGaussianBlur
         stdDeviation="5"
         result="blur"
@@ -41,38 +40,41 @@
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
-
     </filter>
 
-    <!-- Text wipe -->
+    <!-- Stronger glow -->
+    <filter
+      id="strong-glow"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    >
+      <feGaussianBlur
+        stdDeviation="2"
+        result="blur"
+      />
+
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Wordmark reveal -->
     <clipPath id="wordmark-wipe">
-
       <rect
-        x="18"
-        y="35"
-        width="0"
-        height="150"
-      >
-
-        <animate
-          attributeName="width"
-          from="0"
-          to="846"
-          begin="0.2s"
-          dur="2.2s"
-          fill="freeze"
-        />
-
-      </rect>
-
+        x="0"
+        y="25"
+        width="882"
+        height="125"
+      />
     </clipPath>
 
   </defs>
 
 
-  <!-- ═══════════════════════════════════════════════
-       BACKGROUND
-  ═══════════════════════════════════════════════ -->
+  <!-- BACKGROUND -->
 
   <rect
     x="0"
@@ -84,17 +86,17 @@
   />
 
 
-  <!-- ═══════════════════════════════════════════════
-       SUBTLE GRID
-  ═══════════════════════════════════════════════ -->
+  <!-- GRID -->
 
-  <g opacity="0.18">
+  <g opacity="0.16">
 
     <path
-      d="M0 45 H882
-         M0 90 H882
-         M0 135 H882
-         M0 180 H882"
+      d="
+        M0 45 H882
+        M0 90 H882
+        M0 135 H882
+        M0 180 H882
+      "
       stroke="#A970FF"
       stroke-width="1"
     />
@@ -102,9 +104,7 @@
   </g>
 
 
-  <!-- ═══════════════════════════════════════════════
-       TERMINAL PROMPT
-  ═══════════════════════════════════════════════ -->
+  <!-- TERMINAL PROMPT -->
 
   <text
     x="28"
@@ -118,28 +118,12 @@
   </text>
 
 
-  <!-- ═══════════════════════════════════════════════
-       WORDMARK
-  ═══════════════════════════════════════════════ -->
+  <!-- WORDMARK -->
 
   <g clip-path="url(#wordmark-wipe)">
 
-    <!-- Main wordmark -->
+    <!-- Purple ghost layer -->
 
-    <text
-      x="28"
-      y="125"
-      font-family="'Courier New', monospace"
-      font-size="74"
-      font-weight="900"
-      letter-spacing="5"
-      fill="#FFFFFF"
-    >
-      NULL0X001
-    </text>
-
-
-    <!-- Purple offset -->
     <text
       x="32"
       y="129"
@@ -150,9 +134,115 @@
       fill="none"
       stroke="#A970FF"
       stroke-width="1"
-      opacity="0.5"
+      opacity="0.35"
     >
+
       NULL0X001
+
+      <!-- continuous horizontal movement -->
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="
+          0 0;
+          2 0;
+          -1 0;
+          1 0;
+          0 0
+        "
+        dur="2.8s"
+        repeatCount="indefinite"
+      />
+
+    </text>
+
+
+    <!-- Main text -->
+
+    <text
+      x="28"
+      y="125"
+      font-family="'Courier New', monospace"
+      font-size="74"
+      font-weight="900"
+      letter-spacing="5"
+      fill="#FFFFFF"
+    >
+
+      NULL0X001
+
+      <!-- subtle glitch -->
+      <animate
+        attributeName="opacity"
+        values="
+          1;
+          1;
+          1;
+          0.92;
+          1;
+          1;
+          0.96;
+          1
+        "
+        dur="3.7s"
+        repeatCount="indefinite"
+      />
+
+    </text>
+
+
+    <!-- Violet glitch slice -->
+
+    <text
+      x="28"
+      y="125"
+      font-family="'Courier New', monospace"
+      font-size="74"
+      font-weight="900"
+      letter-spacing="5"
+      fill="#A970FF"
+      opacity="0"
+    >
+
+      NULL0X001
+
+      <animate
+        attributeName="opacity"
+        values="
+          0;
+          0;
+          0.7;
+          0;
+          0;
+          0.45;
+          0
+        "
+        keyTimes="
+          0;
+          0.42;
+          0.44;
+          0.46;
+          0.78;
+          0.80;
+          0.82
+        "
+        dur="4s"
+        repeatCount="indefinite"
+      />
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="
+          0 0;
+          -5 0;
+          4 0;
+          0 0
+        "
+        dur="4s"
+        repeatCount="indefinite"
+      />
+
     </text>
 
 
@@ -165,48 +255,111 @@
       height="2"
       fill="#A970FF"
       opacity="0.7"
-    />
+    >
+
+      <!-- moving brightness -->
+
+      <animate
+        attributeName="opacity"
+        values="
+          0.35;
+          0.75;
+          0.35
+        "
+        dur="2.2s"
+        repeatCount="indefinite"
+      />
+
+    </rect>
 
   </g>
 
 
-  <!-- ═══════════════════════════════════════════════
-       SCAN CURSOR
-  ═══════════════════════════════════════════════ -->
+  <!-- CONTINUOUS SCAN LINE -->
 
   <rect
     x="18"
-    y="45"
-    width="3"
-    height="115"
+    y="42"
+    width="2"
+    height="125"
     fill="#C084FC"
     filter="url(#violet-glow)"
   >
 
     <animate
       attributeName="x"
-      from="18"
-      to="864"
-      begin="0.2s"
-      dur="2.2s"
-      fill="freeze"
+      values="
+        18;
+        864;
+        864;
+        18
+      "
+      keyTimes="
+        0;
+        0.42;
+        0.52;
+        1
+      "
+      dur="5s"
+      repeatCount="indefinite"
     />
 
     <animate
       attributeName="opacity"
-      values="0;1;1;0"
-      keyTimes="0;0.1;0.9;1"
-      begin="0.2s"
-      dur="2.2s"
-      fill="freeze"
+      values="
+        0;
+        1;
+        0;
+        0
+      "
+      keyTimes="
+        0;
+        0.12;
+        0.48;
+        1
+      "
+      dur="5s"
+      repeatCount="indefinite"
     />
 
   </rect>
 
 
-  <!-- ═══════════════════════════════════════════════
-       SUBTITLE
-  ═══════════════════════════════════════════════ -->
+  <!-- SCAN PARTICLES -->
+
+  <g fill="#A970FF">
+
+    <circle cx="25" cy="51" r="1">
+      <animate
+        attributeName="opacity"
+        values="0.2;1;0.2"
+        dur="1.4s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle cx="850" cy="93" r="1">
+      <animate
+        attributeName="opacity"
+        values="1;0.2;1"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle cx="610" cy="176" r="1">
+      <animate
+        attributeName="opacity"
+        values="0.2;1;0.2"
+        dur="1.8s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+  </g>
+
+
+  <!-- SUBTITLE -->
 
   <text
     x="30"
@@ -217,17 +370,48 @@
     fill="#77778A"
   >
     BUILDING FROM FUNDAMENTALS
+
+    <animate
+      attributeName="opacity"
+      values="
+        0.65;
+        0.65;
+        1;
+        0.65
+      "
+      dur="3s"
+      repeatCount="indefinite"
+    />
+
   </text>
 
 
-  <!-- Status -->
+  <!-- STATUS -->
 
   <circle
     cx="30"
     cy="203"
     r="4"
     fill="#A970FF"
-  />
+    filter="url(#strong-glow)"
+  >
+
+    <animate
+      attributeName="r"
+      values="3;5;3"
+      dur="1.6s"
+      repeatCount="indefinite"
+    />
+
+    <animate
+      attributeName="opacity"
+      values="0.5;1;0.5"
+      dur="1.6s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
 
   <text
     x="42"
@@ -240,7 +424,7 @@
   </text>
 
 
-  <!-- Signature -->
+  <!-- SIGNATURE -->
 
   <text
     x="850"

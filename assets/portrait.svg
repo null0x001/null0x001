@@ -1,0 +1,162 @@
+<svg width="220" height="220" viewBox="0 0 220 220"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="220" height="220" fill="#08080c"/>
+
+  <!-- CAT SILHOUETTE -->
+
+  <!-- ears -->
+  <path
+    d="M55 78 L48 32 L83 55
+       M165 78 L172 32 L137 55"
+    fill="none"
+    stroke="#fff"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+
+  <!-- head -->
+  <path
+    d="M55 78
+       C55 52 76 39 110 39
+       C144 39 165 52 165 78
+       L160 119
+       C155 145 136 161 110 161
+       C84 161 65 145 60 119
+       Z"
+    fill="none"
+    stroke="#fff"
+    stroke-width="4"
+  />
+
+  <!-- inner ears -->
+  <path
+    d="M57 54 L66 70 L78 59
+       M163 54 L154 70 L142 59"
+    fill="none"
+    stroke="#fff"
+    stroke-width="2"
+  />
+
+  <!-- eyes -->
+  <path
+    d="M73 91
+       L88 84
+       L101 92
+       L88 99
+       Z"
+    fill="#fff"
+  />
+
+  <path
+    d="M119 92
+       L132 84
+       L147 91
+       L132 99
+       Z"
+    fill="#fff"
+  />
+
+  <!-- pupils -->
+  <path
+    d="M86 87 L94 92 L86 96 Z"
+    fill="#08080c"
+  />
+
+  <path
+    d="M134 87 L126 92 L134 96 Z"
+    fill="#08080c"
+  />
+
+  <!-- nose -->
+  <path
+    d="M104 105
+       L110 101
+       L116 105
+       L110 111
+       Z"
+    fill="#fff"
+  />
+
+  <!-- mouth -->
+  <path
+    d="M110 111
+       L110 119
+       M110 119
+       C103 119 99 116 96 114
+       M110 119
+       C117 119 121 116 124 114"
+    fill="none"
+    stroke="#fff"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+
+  <!-- whiskers -->
+  <g
+    stroke="#fff"
+    stroke-width="2"
+    stroke-linecap="round"
+    opacity="0.9"
+  >
+    <path d="M73 111 L42 105"/>
+    <path d="M73 119 L39 119"/>
+    <path d="M75 127 L44 136"/>
+
+    <path d="M147 111 L178 105"/>
+    <path d="M147 119 L181 119"/>
+    <path d="M145 127 L176 136"/>
+  </g>
+
+  <!-- dotted facial texture -->
+  <g fill="#fff">
+
+    <circle cx="66" cy="101" r="1"/>
+    <circle cx="70" cy="106" r="1.2"/>
+    <circle cx="66" cy="113" r="0.8"/>
+    <circle cx="72" cy="133" r="1"/>
+
+    <circle cx="154" cy="101" r="1"/>
+    <circle cx="150" cy="106" r="1.2"/>
+    <circle cx="154" cy="113" r="0.8"/>
+    <circle cx="148" cy="133" r="1"/>
+
+    <circle cx="82" cy="71" r="1"/>
+    <circle cx="91" cy="66" r="0.8"/>
+    <circle cx="101" cy="63" r="1"/>
+    <circle cx="119" cy="63" r="1"/>
+    <circle cx="129" cy="66" r="0.8"/>
+    <circle cx="138" cy="71" r="1"/>
+
+  </g>
+
+  <!-- neck -->
+  <path
+    d="M88 157 L88 174
+       M132 157 L132 174"
+    stroke="#fff"
+    stroke-width="3"
+  />
+
+  <!-- shoulders -->
+  <path
+    d="M88 170
+       C70 174 56 184 48 199
+       M132 170
+       C150 174 164 184 172 199"
+    fill="none"
+    stroke="#fff"
+    stroke-width="3"
+  />
+
+  <!-- small digital particles -->
+  <g fill="#fff">
+    <circle cx="31" cy="58" r="1"/>
+    <circle cx="25" cy="73" r="0.7"/>
+    <circle cx="34" cy="145" r="0.8"/>
+    <circle cx="188" cy="58" r="1"/>
+    <circle cx="195" cy="73" r="0.7"/>
+    <circle cx="186" cy="145" r="0.8"/>
+  </g>
+
+</svg>
